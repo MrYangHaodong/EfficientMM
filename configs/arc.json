@@ -1,0 +1,6 @@
+{
+  "_comment": "ARC settings. 'deployed' gives, per fold, the seed and the acquisition cost lambda of the policy reported in the paper (the prior is priced with this lambda during training and whenever the policy is used; there is no separate stop margin).",
+  "p_train": 0.7, "iters": 8, "epochs": 40, "lr": 1e-3, "hidden": 64,
+  "lambda_grid": [0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 3.0], "seeds": [0, 1, 2],
+  "deployed": {"0": {"seed": 1, "lam": 0.5}, "1": {"seed": 1, "lam": 0.5}, "2": {"seed": 0, "lam": 0.5}}
+}

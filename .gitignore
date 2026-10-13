@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+
+# produced by the pipeline
+checkpoints/
+cache/
+logs/
+datasets/
+*.pth
+*.pt
+*.npz
+*.npy
+*.log

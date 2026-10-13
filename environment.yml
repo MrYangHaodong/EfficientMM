@@ -1,0 +1,21 @@
+name: semarc
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch=2.5.1
+  - torchaudio=2.5.1    # XLS-R 1B audio features
+  - pytorch-cuda=12.1
+  - numpy
+  - scipy
+  - scikit-learn
+  - pandas
+  - pillow
+  - tqdm
+  - pip
+  - pip:
+      - fvcore          # GFLOPs of each SeMA branch (arc/prefix_cache.py)
+      - transformers    # BERT text features
+      - opencv-python   # video segmentation / frame reading

@@ -1,0 +1,13 @@
+{
+  "_comment": "SeMA training recipe for IEMOCAP (cross-subject folds 0/1/2).",
+  "folds": [0, 1, 2], "seed": 239,
+  "max_seq_len": 100, "batch_size": 32, "num_workers": 4,
+  "d_model": 128, "nhead": 8, "num_enc_layers": 3, "num_fusion_layers": 3,
+  "n_bottlenecks": 16, "mlp_ratio": 1.0, "dropout": 0.1,
+  "seq_random_order": true,
+  "prefix_supervision": true, "prefix_ds_weight": 1.0, "prefix_kd_weight": 0.5,
+  "ema_teacher": true, "ema_decay": 0.999,
+  "max_modality_drop": 0.4, "warmup_epochs": 10, "ramp_epochs": 20, "num_epochs": 40,
+  "lr": 1e-4, "weight_decay": 0.0, "label_smoothing": 0.0, "clip_grad": 1.0,
+  "loss": "weighted_ce"
+}

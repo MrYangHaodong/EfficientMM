@@ -1,0 +1,11 @@
+{
+ "_comment": "Per-modality cost of turning the raw IEMOCAP stream into SeMA input features. extract_gflops = units x per-unit extractor GFLOPs (0 = raw sensor stream, no extractor); extract_ms = measured single-sample extraction time (raw file read + extractor) on an idle NVIDIA L40. Used only for reporting end-to-end GFLOPs and estimated extraction time; ARC prices every modality equally.",
+ "iemocap": {
+  "video":         {"extractor": "DINOv3 ViT-L/16, 100 frames",  "units": 100, "extract_gflops": 6090.45350400, "extract_ms": 1432.639},
+  "audio":         {"extractor": "wav2vec2 XLS-R 1B, 12 s clip", "units": 1,   "extract_gflops": 603.561095936, "extract_ms": 64.673},
+  "text":          {"extractor": "BERT-base, one utterance",      "units": 1,   "extract_gflops": 1.445521152,   "extract_ms": 4.144},
+  "mocap_hand":    {"extractor": "none (raw motion capture)",     "units": 0,   "extract_gflops": 0.0,           "extract_ms": 2.576},
+  "mocap_head":    {"extractor": "none (raw motion capture)",     "units": 0,   "extract_gflops": 0.0,           "extract_ms": 1.113},
+  "mocap_rotated": {"extractor": "none (raw motion capture)",     "units": 0,   "extract_gflops": 0.0,           "extract_ms": 18.399}
+ }
+}
