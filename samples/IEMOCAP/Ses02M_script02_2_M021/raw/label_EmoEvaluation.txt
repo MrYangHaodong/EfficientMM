@@ -1,0 +1,6 @@
+[201.8200 - 207.2900]	Ses02M_script02_2_M021	neu	[3.0000, 3.5000, 3.5000]
+C-E1:	Excited;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 3; act 4; dom  4;	()

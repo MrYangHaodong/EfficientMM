@@ -1,0 +1,6 @@
+[414.2156 - 418.5924]	Ses03M_script01_1_M047	sad	[3.0000, 2.5000, 3.5000]
+C-E1:	Sadness;	()
+C-E2:	Sadness;	()
+C-E4:	Neutral;	()
+A-E1:	val 3; act 2; dom  3;	()
+A-E2:	val 3; act 3; dom  4;	()

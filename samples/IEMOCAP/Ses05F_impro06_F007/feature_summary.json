@@ -1,0 +1,115 @@
+{
+ "video": {
+  "file": "video_features.pkl",
+  "shape": [
+   100,
+   1024
+  ],
+  "dtype": "float32",
+  "model": "dinov3_vitl16",
+  "meta": {
+   "utterance_id": "Ses05F_impro06_F007",
+   "session": 5,
+   "dialog": "Ses05F_impro06",
+   "avi_path": "/home/group/maestro_visual/data/IEMOCAP_full_release/Session5/sentences/avi/Ses05F_impro06/Ses05F_impro06_F007.avi",
+   "total_frames": 59,
+   "target_frames": 100,
+   "feature_shape": "(100, 1024)",
+   "feature_dim": 1024,
+   "model_name": "dinov3_vitl16",
+   "transcription": "I just, I don't know.",
+   "start": 69.57,
+   "end": 71.54,
+   "emotion": "sad",
+   "emotion_name": "sad",
+   "emotion_label": 3,
+   "v": 2.0,
+   "a": 2.0,
+   "d": 3.5
+  }
+ },
+ "audio": {
+  "file": "audio_features.pkl",
+  "shape": [
+   1,
+   599,
+   1280
+  ],
+  "dtype": "float32",
+  "model": "WAV2VEC2_XLSR_1B",
+  "meta": {
+   "utterance_id": "Ses05F_impro06_F007",
+   "session": 5,
+   "dialog": "Ses05F_impro06",
+   "wav_path": "/home/group/maestro_visual/data/IEMOCAP_full_release/Session5/sentences/wav/Ses05F_impro06/Ses05F_impro06_F007.wav",
+   "transcription": "I just, I don't know.",
+   "model_name": "WAV2VEC2_XLSR_1B",
+   "feature_shape": "(1, 599, 1280)",
+   "target_sample_rate": 16000,
+   "audio_duration": 12.0,
+   "start": 69.57,
+   "end": 71.54,
+   "emotion": "sad",
+   "emotion_name": "sad",
+   "emotion_label": 3,
+   "v": 2.0,
+   "a": 2.0,
+   "d": 3.5
+  }
+ },
+ "text": {
+  "file": "text_features.pkl",
+  "shape": [
+   11,
+   768
+  ],
+  "dtype": "float32",
+  "model": "bert-base-uncased",
+  "meta": {
+   "utterance_id": "Ses05F_impro06_F007",
+   "session": 5,
+   "dialog": "Ses05F_impro06",
+   "transcription": "I just, I don't know.",
+   "feature_shape": "(11, 768)",
+   "feature_dim": 768,
+   "model_name": "bert-base-uncased",
+   "pooling_strategy": "none",
+   "timestamp": "2026-05-03T18:57:28.810451",
+   "start": 69.57,
+   "end": 71.54,
+   "emotion": "sad",
+   "emotion_name": "sad",
+   "emotion_label": 3,
+   "v": 2.0,
+   "a": 2.0,
+   "d": 3.5
+  }
+ },
+ "MOCAP_hand": {
+  "file": "MOCAP_hand.txt",
+  "shape": [
+   237,
+   18
+  ],
+  "dtype": "float32 after parsing (frame, time, then features; NaN -> 0 in the loader)",
+  "model": "raw motion capture, used as is"
+ },
+ "MOCAP_head": {
+  "file": "MOCAP_head.txt",
+  "shape": [
+   237,
+   6
+  ],
+  "dtype": "float32 after parsing (frame, time, then features; NaN -> 0 in the loader)",
+  "model": "raw motion capture, used as is"
+ },
+ "MOCAP_rotated": {
+  "file": "MOCAP_rotated.txt",
+  "shape": [
+   237,
+   165
+  ],
+  "dtype": "float32 after parsing (frame, time, then features; NaN -> 0 in the loader)",
+  "model": "raw motion capture, used as is"
+ }
+}

@@ -1,0 +1,6 @@
+[409.3500 - 412.6600]	Ses04F_script02_2_F045	hap	[4.0000, 3.5000, 3.0000]
+C-E1:	Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Happiness;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E2:	val 4; act 4; dom  3;	()

@@ -1,0 +1,8 @@
+[150.9700 - 154.2600]	Ses03M_impro07_F023	neu	[4.5000, 4.5000, 1.5000]
+C-E1:	Other;	()
+C-E2:	Neutral;	()
+C-E4:	Neutral;	()
+C-F3:	Happiness;	()
+A-E1:	val 3; act 3; dom  3;	()
+A-E2:	val 6; act 6; dom ;	()
+A-F3:	val 4; act 3; dom  2;	()

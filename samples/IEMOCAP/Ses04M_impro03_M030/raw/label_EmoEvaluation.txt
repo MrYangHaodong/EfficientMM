@@ -1,0 +1,6 @@
+[252.6700 - 259.2400]	Ses04M_impro03_M030	hap	[4.5000, 3.0000, 3.5000]
+C-E1:	Happiness;	()
+C-E2:	Happiness;	()
+C-E4:	Neutral;	()
+A-E1:	val 4; act 3; dom  3;	()
+A-E2:	val 5; act 3; dom  4;	()

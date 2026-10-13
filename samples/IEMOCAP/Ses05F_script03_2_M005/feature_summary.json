@@ -1,0 +1,115 @@
+{
+ "video": {
+  "file": "video_features.pkl",
+  "shape": [
+   100,
+   1024
+  ],
+  "dtype": "float32",
+  "model": "dinov3_vitl16",
+  "meta": {
+   "utterance_id": "Ses05F_script03_2_M005",
+   "session": 5,
+   "dialog": "Ses05F_script03_2",
+   "avi_path": "/home/group/maestro_visual/data/IEMOCAP_full_release/Session5/sentences/avi/Ses05F_script03_2/Ses05F_script03_2_M005.avi",
+   "total_frames": 87,
+   "target_frames": 100,
+   "feature_shape": "(100, 1024)",
+   "feature_dim": 1024,
+   "model_name": "dinov3_vitl16",
+   "transcription": "You let him kiss you.  You said you did.",
+   "start": 34.08,
+   "end": 36.99,
+   "emotion": "ang",
+   "emotion_name": "angry",
+   "emotion_label": 1,
+   "v": 2.0,
+   "a": 3.5,
+   "d": 3.5
+  }
+ },
+ "audio": {
+  "file": "audio_features.pkl",
+  "shape": [
+   1,
+   599,
+   1280
+  ],
+  "dtype": "float32",
+  "model": "WAV2VEC2_XLSR_1B",
+  "meta": {
+   "utterance_id": "Ses05F_script03_2_M005",
+   "session": 5,
+   "dialog": "Ses05F_script03_2",
+   "wav_path": "/home/group/maestro_visual/data/IEMOCAP_full_release/Session5/sentences/wav/Ses05F_script03_2/Ses05F_script03_2_M005.wav",
+   "transcription": "You let him kiss you.  You said you did.",
+   "model_name": "WAV2VEC2_XLSR_1B",
+   "feature_shape": "(1, 599, 1280)",
+   "target_sample_rate": 16000,
+   "audio_duration": 12.0,
+   "start": 34.08,
+   "end": 36.99,
+   "emotion": "ang",
+   "emotion_name": "angry",
+   "emotion_label": 1,
+   "v": 2.0,
+   "a": 3.5,
+   "d": 3.5
+  }
+ },
+ "text": {
+  "file": "text_features.pkl",
+  "shape": [
+   13,
+   768
+  ],
+  "dtype": "float32",
+  "model": "bert-base-uncased",
+  "meta": {
+   "utterance_id": "Ses05F_script03_2_M005",
+   "session": 5,
+   "dialog": "Ses05F_script03_2",
+   "transcription": "You let him kiss you.  You said you did.",
+   "feature_shape": "(13, 768)",
+   "feature_dim": 768,
+   "model_name": "bert-base-uncased",
+   "pooling_strategy": "none",
+   "timestamp": "2026-05-03T18:57:34.466708",
+   "start": 34.08,
+   "end": 36.99,
+   "emotion": "ang",
+   "emotion_name": "angry",
+   "emotion_label": 1,
+   "v": 2.0,
+   "a": 3.5,
+   "d": 3.5
+  }
+ },
+ "MOCAP_hand": {
+  "file": "MOCAP_hand.txt",
+  "shape": [
+   349,
+   18
+  ],
+  "dtype": "float32 after parsing (frame, time, then features; NaN -> 0 in the loader)",
+  "model": "raw motion capture, used as is"
+ },
+ "MOCAP_head": {
+  "file": "MOCAP_head.txt",
+  "shape": [
+   349,
+   6
+  ],
+  "dtype": "float32 after parsing (frame, time, then features; NaN -> 0 in the loader)",
+  "model": "raw motion capture, used as is"
+ },
+ "MOCAP_rotated": {
+  "file": "MOCAP_rotated.txt",
+  "shape": [
+   349,
+   165
+  ],
+  "dtype": "float32 after parsing (frame, time, then features; NaN -> 0 in the loader)",
+  "model": "raw motion capture, used as is"
+ }
+}

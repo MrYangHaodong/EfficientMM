@@ -1,0 +1,9 @@
+utterance_id,session,dialog,speaker,kind,emotion,emotion_name,emotion_label,valence,activation,dominance,start_s,end_s,n_words,transcription
+Ses03M_impro07_F023,3,Ses03M_impro07,F,improvised,neu,neutral,0,4.5,4.5,1.5,150.97,154.26,9,Oh my God.  I am so proud of you.
+Ses02M_script02_2_M021,2,Ses02M_script02_2,M,scripted,neu,neutral,0,3.0,3.5,3.5,201.82,207.29,11,"Yea. Okay, sure, no. I see. Listen, you want to dance?"
+Ses01F_script02_1_F007,1,Ses01F_script02_1,F,scripted,ang,angry,1,2.0,3.5,2.5,57.75,59.57,7,How's that supposed to make me feel?
+Ses05F_script03_2_M005,5,Ses05F_script03_2,M,scripted,ang,angry,1,2.0,3.5,3.5,34.08,36.99,9,You let him kiss you.  You said you did.
+Ses04F_script02_2_F045,4,Ses04F_script02_2,F,scripted,hap,happy,2,4.0,3.5,3.0,409.35,412.66,8,Well then I guess we don't need glasses.
+Ses04M_impro03_M030,4,Ses04M_impro03,M,improvised,hap,happy,2,4.5,3.0,3.5,252.67,259.24,10,Yeah.  Well maybe--maybe you're right. Maybe there's something to that.
+Ses05F_impro06_F007,5,Ses05F_impro06,F,improvised,sad,sad,3,2.0,2.0,3.5,69.57,71.54,5,"I just, I don't know."
+Ses03M_script01_1_M047,3,Ses03M_script01_1,M,scripted,sad,sad,3,3.0,2.5,3.5,414.2156,418.5924,8,No you don't.  I'm a pretty tough guy.

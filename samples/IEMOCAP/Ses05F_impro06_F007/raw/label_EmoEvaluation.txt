@@ -1,0 +1,6 @@
+[69.5700 - 71.5400]	Ses05F_impro06_F007	sad	[2.0000, 2.0000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Sadness;	()
+C-E4:	Sadness;	()
+A-E1:	val 2; act 2; dom  3;	()
+A-E2:	val 2; act 2; dom  4;	()

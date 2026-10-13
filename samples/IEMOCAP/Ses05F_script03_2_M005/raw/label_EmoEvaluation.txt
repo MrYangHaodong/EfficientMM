@@ -1,0 +1,6 @@
+[34.0800 - 36.9900]	Ses05F_script03_2_M005	ang	[2.0000, 3.5000, 3.5000]
+C-E1:	Anger;	()
+C-E2:	Anger;	()
+C-E4:	Other;	(annoyed)
+A-E1:	val 2; act 3; dom  3;	()
+A-E2:	val 2; act 4; dom  4;	()

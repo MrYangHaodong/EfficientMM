@@ -98,6 +98,41 @@ the SeMA + ARC loop one sample at a time: ARC reads the current posterior, picks
 SeMA encodes and fuses only that modality, and so on until STOP. Unacquired modalities are
 never read. Inputs are the pre-extracted features; `--time` reports per-sample latency.
 
+## Try it on the bundled samples
+
+`samples/IEMOCAP/` holds eight IEMOCAP utterances (two per emotion, both speakers, sessions
+1–5) with both their raw data (utterance clip, wav, motion capture, transcript, annotation
+block) and their pre-extracted features; see `samples/IEMOCAP/README.md`. With the
+checkpoints in place (next section) SeMARC can be run on them in two ways.
+
+**Without raw extraction** (from `samples/*/features`; needs only the conda environment):
+
+```bash
+python inference/run_samples.py
+```
+
+**With raw extraction** (from `samples/*/raw`; the feature extractors run inside the loop,
+so a modality's extractor is executed only if ARC acquires it):
+
+```bash
+python inference/run_samples.py --from_raw \
+    --dinov3_repo /path/to/dinov3 --dinov3_ckpt /path/to/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+```
+
+This needs `transformers`, `torchaudio` and `opencv-python` (in `environment.yml`), the DINOv3
+code (github.com/facebookresearch/dinov3) and its ViT-L/16 weights; XLS-R 1B and BERT-base are
+downloaded on first use. Each sample is scored with the fold whose models never saw its session
+(`--fold` overrides). Both modes print the acquisition order with per-modality time, the
+prediction and the label, e.g.
+
+```
+Ses05F_script03_2_M005 (session 5, fold 0): acquired text (13 ms) -> audio (101 ms); predicted angry (0.98), label angry [ok]; 2/6 modalities, 132 ms
+Ses04M_impro03_M030 (session 4, fold 1): acquired text (7 ms) -> audio (137 ms) -> video (2554 ms) -> ...; predicted happy (0.58), label happy [ok]; 6/6 modalities, 2751 ms
+```
+
+On these eight samples the two modes give the same acquisition sequences and predictions
+(7/8 correct); in the raw mode the video extractor runs for three of the eight.
+
 ## Checks against the paper's artefacts
 
 - The paper's SeMA checkpoints load strictly; `train_sema.py` matches the original trainer
@@ -112,7 +147,16 @@ never read. Inputs are the pre-extracted features; `--time` reports per-sample l
 
 ## Checkpoints
 
-Pre-trained SeMA and ARC checkpoints for the three folds: (link to be added).
+The paper's SeMA and ARC checkpoints for the three IEMOCAP folds (`semarc_iemocap_checkpoints.zip`,
+49 MB; Google Drive link to be added). Unzip into the repository root to get
+
+```
+checkpoints/sema/best_model_fold{0,1,2}.pth, results_fold{0,1,2}.json
+checkpoints/arc/arc_fold0_seed1_lam0.500.pt, arc_fold1_seed1_lam0.500.pt, arc_fold2_seed0_lam0.500.pt
+```
+
+The ARC files carry their gain tables, so `inference/run_samples.py` and `inference/online.py`
+need no prefix cache; `inference/evaluate.py` does (step 2).
 
 ## Citation
 

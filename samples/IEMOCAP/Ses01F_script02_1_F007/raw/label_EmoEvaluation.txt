@@ -1,0 +1,6 @@
+[57.7500 - 59.5700]	Ses01F_script02_1_F007	ang	[2.0000, 3.5000, 2.5000]
+C-E2:	Anger;	()
+C-E3:	Frustration;	()
+C-E4:	Anger;	()
+A-E3:	val 2; act 3; dom  2;	()
+A-E4:	val 2; act 4; dom  3;	(feels victimized, upset, accusing)

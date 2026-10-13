@@ -11,3 +11,5 @@ datasets/
 *.npz
 *.npy
 *.log
+*.zip
+samples/**/__pycache__/
