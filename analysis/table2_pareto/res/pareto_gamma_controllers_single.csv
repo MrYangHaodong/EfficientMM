@@ -1,0 +1,21 @@
+method,knob,knob_value,macro_f1,latency_ms,in_inset,table2_setting
+SeMARC,gamma,0.75,0.7619,355.5,True,False
+SeMARC,gamma,0.5,0.7631,393.4,True,False
+SeMARC,gamma,0.25,0.7643,441.0,True,False
+SeMARC,gamma,0,0.7675,520.2,True,True
+SeMA + EAMA,gamma,0.75,0.6708,312.2,True,False
+SeMA + EAMA,gamma,1,0.6712,342.2,True,False
+SeMA + EAMA,gamma,0.5,0.7336,388.5,True,False
+SeMA + EAMA,gamma,0.25,0.7447,416.5,True,False
+SeMA + EAMA,gamma,0,0.7436,463.5,True,True
+SeMA + Joint-AFA,r_cost,0.5,0.6721,383.9,True,False
+SeMA + Joint-AFA,r_cost,0.3,0.7238,432.0,True,False
+SeMA + Joint-AFA,r_cost,0.1,0.7426,516.9,True,False
+SeMA + Joint-AFA,r_cost,0,0.7584,1459.0,False,False
+SeMA + GMS,k_change_pct,-75,0.649,753.1,False,False
+SeMA + GMS,k_change_pct,-50,0.689,765.4,False,False
+SeMA + GMS,k_change_pct,-25,0.7329,768.5,False,False
+SeMA + GMS,k_change_pct,0,0.7333,772.1,False,True
+SeMA + GMS,k_change_pct,25,0.7447,1098.7,False,False
+SeMA + GMS,k_change_pct,50,0.7792,1327.5,False,False
+MultiModN + ARC,,,0.5273,1078.9,False,True
