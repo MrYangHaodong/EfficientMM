@@ -79,12 +79,13 @@ def gain_advice(cache, M, tables, avail=None):
     return adv
 
 
-def q_prior(cache, M, tables, lam, avail=None):
-    """[n, N, M+1] Q_0 at every (node, sample); action M is STOP."""
+def q_prior(cache, M, tables, lam, avail=None, weights=None):
+    """[n, N, M+1] Q_0 at every (node, sample); action M is STOP. ``weights``: optional per-modality
+    cost weights (arc.core.step_cost)."""
     soft = cache['softmax']; n, N, C = soft.shape
     conf = soft.max(-1)
     adv = gain_advice(cache, M, tables, avail)
-    sc = step_cost(lam, avail, N, M)
+    sc = step_cost(lam, avail, N, M, weights)
     Q = np.zeros((n, N, M + 1), np.float32)
     Q[:, :, M] = conf
     Q[:, :, :M] = conf[:, :, None] + adv - sc[None, :, :]

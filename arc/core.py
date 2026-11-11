@@ -94,10 +94,21 @@ def reachable_nodes(used, avail, n, N, M):
     return R
 
 
-def step_cost(lam, avail, N, M):
-    """[N, M] cost of one acquisition: lam / |A_n|."""
+def step_cost(lam, avail, N, M, weights=None):
+    """[N, M] cost of one acquisition: lam / |A_n| (uniform), or with modality weights w,
+    lam * w_m / sum_{j in A_n} w_j (acquiring everything available still costs lam)."""
     av = _avail(avail, N, M).astype(np.float32)
-    return np.repeat((lam / av.sum(1))[:, None], M, axis=1)
+    if weights is None:
+        return np.repeat((lam / av.sum(1))[:, None], M, axis=1)
+    w = av * np.asarray(weights, np.float32)[None, :]
+    return lam * w / np.maximum(w.sum(1, keepdims=True), 1e-12)
+
+
+def cost_weights(extract_ms, gamma):
+    """Modality weights w_m = (t_m / min_j t_j) ** gamma from extraction times t (float32);
+    gamma = 0 gives w = 1, i.e. the uniform cost."""
+    t = np.asarray(extract_ms, np.float32)
+    return ((t / t.min()) ** gamma).astype(np.float32)
 
 
 def correctness(cache):

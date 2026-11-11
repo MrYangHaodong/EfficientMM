@@ -86,8 +86,10 @@ def _walk(net, cache, M, Sf, Qp, avail=None):
     return core.macro_f1(cache['y'], preds), float(depth[sn].mean()), float(cache['gflops'][sn].mean()), sn
 
 
-def train(val, M, seed, lam, tables=None, p_train=0.7, iters=8, epochs=40, lr=1e-3, hidden=64, device=None):
-    """Fit ARC on a validation cache. Returns (net, tables, best_iteration, holdout_f1)."""
+def train(val, M, seed, lam, tables=None, p_train=0.7, iters=8, epochs=40, lr=1e-3, hidden=64, device=None,
+          weights=None):
+    """Fit ARC on a validation cache. Returns (net, tables, best_iteration, holdout_f1).
+    ``weights``: optional per-modality cost weights (arc.core.cost_weights); None = uniform lam / |A|."""
     torch.manual_seed(seed); np.random.seed(seed)
     rng_av = np.random.default_rng(7000 + seed)
     dev = device or ('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -101,10 +103,10 @@ def train(val, M, seed, lam, tables=None, p_train=0.7, iters=8, epochs=40, lr=1e
 
     def tensors(avail):
         Sf = core.build_state(val, M, avail)
-        Qp = q_prior(val, M, tables, lam, avail)
+        Qp = q_prior(val, M, tables, lam, avail, weights)
         mk = core.action_mask(n, M, depth, ch, avail, N)
         reach = core.reachable_nodes(used, avail, n, N, M)
-        sc = core.step_cost(lam, avail, N, M)
+        sc = core.step_cost(lam, avail, N, M, weights)
         S = torch.tensor(Sf[:, tr, :]).reshape(n * len(tr), -1).to(dev)
         QP = torch.tensor(Qp[:, tr, :]).to(dev)
         mk_t = torch.tensor(mk[:, tr, :]).to(dev)
@@ -176,9 +178,9 @@ def load(path, device=None):
     return net.to(dev).eval(), tables, meta
 
 
-def rollout(net, cache, M, tables, lam, avail=None):
+def rollout(net, cache, M, tables, lam, avail=None, weights=None):
     """Deploy the policy on a cache under the rule it was selected with: Q_0 priced at the
-    policy's own training ``lam``, greedy acquisition, STOP as soon as Q(STOP) >= max_m Q(m)
-    (ties go to STOP; no stop margin). ``avail`` [N, M] restricts each sample's modalities.
-    -> (macro-F1, mean #acquired, mean fusion GFLOPs, stop node per sample)."""
-    return _walk(net, cache, M, core.build_state(cache, M, avail), q_prior(cache, M, tables, lam, avail), avail)
+    policy's own training ``lam`` (and cost ``weights``), greedy acquisition, STOP as soon as
+    Q(STOP) >= max_m Q(m) (ties go to STOP; no stop margin). ``avail`` [N, M] restricts each
+    sample's modalities. -> (macro-F1, mean #acquired, mean fusion GFLOPs, stop node per sample)."""
+    return _walk(net, cache, M, core.build_state(cache, M, avail), q_prior(cache, M, tables, lam, avail, weights), avail)
